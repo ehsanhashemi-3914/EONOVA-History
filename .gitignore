@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# test output
+coverage/
+test-results/
+playwright-report/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+next-env.d.ts
+
+# local environment and OS/editor noise
+.env*.local
+.DS_Store
+Thumbs.db
+
+# generated: MapLibre worker copied from node_modules
+public/vendor/

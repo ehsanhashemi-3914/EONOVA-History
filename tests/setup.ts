@@ -1,0 +1,14 @@
+// Runs before every test file. Adds DOM-specific matchers such as
+// `expect(element).toBeInTheDocument()` and resets the fake browser between tests.
+import "@testing-library/jest-dom/vitest";
+import { cleanup } from "@testing-library/react";
+import { afterEach } from "vitest";
+
+afterEach(() => {
+  cleanup();
+  window.localStorage.clear();
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.split("=")[0]?.trim();
+    if (name) document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+  });
+});
